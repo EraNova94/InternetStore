@@ -1,0 +1,15 @@
+#form-edit {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+.outlined-edit {
+  height: 65px;
+}
+
+#edit-title {
+  font-size: 30px;
+  font-family: fantasy;
+  text-align: center;
+}
