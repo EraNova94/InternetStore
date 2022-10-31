@@ -1,0 +1,25 @@
+.card__images {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+.card__images-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#card-img {
+  height: 310px;
+  width: 200px;
+  border-radius: 8px;
+}
+#card-img2 {
+  height: 150px;
+  width: 160px;
+  border-radius: 8px;
+}
+#card-img3 {
+  height: 150px;
+  width: 160px;
+  border-radius: 8px;
+}

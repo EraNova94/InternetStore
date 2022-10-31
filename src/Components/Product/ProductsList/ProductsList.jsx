@@ -1,29 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import ProductCard from "../ProductCard/ProductCard";
+import { productContext } from "../../../context/ProductContextProvider";
 const ProductsList = () => {
-  let arr = [
-    {
-      title: "Samsung",
-      category: "Phone",
-      model: "Samsung J3",
-    },
-    {
-      title: "Samsung",
-      category: "Phone",
-      model: "Samsung S20 Ultra",
-    },
-    {
-      title: "Samsung",
-      category: "Phone",
-      model: "Samsung J3",
-    },
-    {
-      title: "Samsung",
-      category: "Phone",
-      model: "Samsung Flip Flup",
-    },
-  ];
+  const { productsArr, readProduct } = useContext(productContext);
+  useEffect(() => {
+    readProduct();
+  }, []);
+
   return (
     <>
       <Box>
@@ -35,11 +19,13 @@ const ProductsList = () => {
           sx={{ width: "90%" }}
           mx="auto"
           my="20px">
-          {arr.map(item => (
-            <Grid xs={3.5} mb={7}>
-              <ProductCard obj={item} />
-            </Grid>
-          ))}
+          {productsArr
+            ? productsArr.map(item => (
+                <Grid xs={3.5} mb={7} key={item.id} item={true}>
+                  <ProductCard obj={item} />
+                </Grid>
+              ))
+            : null}
         </Grid>
       </Box>
     </>

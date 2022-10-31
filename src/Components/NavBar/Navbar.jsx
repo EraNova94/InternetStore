@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -178,6 +179,17 @@ function NavBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <Box
+            sx={{
+              display: "flex",
+              width: "50%",
+              justifyContent: "space-around",
+            }}>
+            <Link to="/">Home</Link>
+            <Link to="/add">Add Products</Link>
+            <Link to="/list">Products List</Link>
+            {/* <Link to="/details">Products Details</Link> */}
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

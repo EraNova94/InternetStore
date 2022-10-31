@@ -11,10 +11,16 @@ import { blue } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Button } from "@mui/material";
+import Add from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
+import "./ProductCard.css";
 
 const ProductCard = ({ obj }) => {
+  // console.log(obj);
   return (
-    <Card sx={{ maxWidth: 300 }}>
+    // <div className="product-card">
+    <Card sx={{ maxWidth: 800, bgcolor: blue[100] }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: blue[700] }} aria-label="recipe">
@@ -22,26 +28,44 @@ const ProductCard = ({ obj }) => {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <Link to={`/details/${obj.id}`}>
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          </Link>
         }
-        title={obj.category}
-        subheader={`${obj.title} ${obj.model}`}
+        title={`Category: ${obj.category}`}
+        subheader={`Title: ${obj.title} Model: ${obj.model}`}
       />
-      <CardMedia
-        component="img"
-        height="150"
-        image="https://avatars.mds.yandex.net/i?id=8f67573e4e4ad3d5af2514fd86442b30-3535327-images-thumbs&n=13"
-        alt="Paella dish"
-      />
+      <div className="card__images">
+        <CardMedia
+          id="card-img"
+          component="img"
+          image={obj.img1}
+          alt="Paella dish"
+        />
+        <div className="card__images-right">
+          <CardMedia
+            id="card-img2"
+            component="img"
+            image={obj.img2}
+            alt="Paella dish"
+          />
+          <CardMedia
+            id="card-img3"
+            component="img"
+            image={obj.img3}
+            alt="Paella dish"
+          />
+        </div>
+      </div>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Samsung, South Korean company that is one of the world's largest
-          producers of electronic devices. Samsung specializes in the production
-          of a wide variety of consumer and industry electronics, including
-          appliances, digital media devices, semiconductors, memory chips, and
-          integrated systems.
+          <span>{`Description: ${obj.description}`}</span>
+          <br />
+          <span>{`Color: ${obj.color}`}</span>
+          <br />
+          <span>{`Price: ${obj.price}`}</span>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -51,8 +75,12 @@ const ProductCard = ({ obj }) => {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
+        <Button startdecorator={<Add />} sx={{ bgcolor: blue[300] }}>
+          + Add to cart
+        </Button>
       </CardActions>
     </Card>
+    // </div>
   );
 };
 

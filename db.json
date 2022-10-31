@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "category": "31",
+      "title": "5132",
+      "model": "56132",
+      "description": "56132",
+      "color": "61532",
+      "price": "61532",
+      "img1": "1532",
+      "img2": "61523",
+      "img3": "5123",
+      "id": 1
+    },
+    {
+      "category": "Electronics",
+      "title": "651",
+      "model": "615",
+      "description": "3615",
+      "color": "655",
+      "price": "655",
+      "img1": "56",
+      "img2": "651",
+      "img3": "651",
+      "id": 2
+    }
+  ]
+}
