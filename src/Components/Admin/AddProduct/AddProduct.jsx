@@ -97,6 +97,7 @@ const AddProduct = () => {
         />
         <TextField
           className="outlined-basic"
+          type="number"
           label="Price"
           variant="outlined"
           value={price}

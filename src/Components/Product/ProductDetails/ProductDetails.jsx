@@ -22,6 +22,7 @@ import StayCurrentPortraitOutlinedIcon from "@mui/icons-material/StayCurrentPort
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { AddShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { basketContext } from "../../../context/BasketContextProvider";
 
 SwiperCore.use([Thumbs]);
 
@@ -29,6 +30,8 @@ const ProductDetails = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { readOneProduct, productDetails, deleteProduct } =
     useContext(productContext);
+
+  const { addProductToBasket } = useContext(basketContext);
   const { id } = useParams();
 
   useEffect(() => {
@@ -107,31 +110,47 @@ const ProductDetails = () => {
                 <Typography variant="h6" sx={{ marginTop: "20px" }}>
                   {productDetails.description}
                 </Typography>
-                <Alert
-                  icon={<AttachMoneyIcon />}
-                  sx={{
-                    fontSize: "20px",
-                    fontWeight: 700,
-                    mt: "20px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}>
-                  Цена: {productDetails.price}
-                  <Button variant="contained">Buy</Button>
-                  <Button variant="contained" color="warning">
-                    <AddShoppingCart />
-                  </Button>
-                </Alert>
                 <Box
                   sx={{
-                    mt: "15px",
                     display: "flex",
+                    alignItems: "center",
                     justifyContent: "space-between",
+                    backgroundColor: "#f0f2b7",
                   }}>
+                  <Alert
+                    icon={<AttachMoneyIcon />}
+                    sx={{
+                      fontSize: "20px",
+                      fontWeight: 700,
+                      alignItems: "center",
+                      backgroundColor: "#f0f2b7",
+                    }}>
+                    Цена: {productDetails.price}
+                  </Alert>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      width: "200px",
+                      flexWrap: "wrap",
+                    }}>
+                    <Button variant="contained" sx={{ width: "45%" }}>
+                      Buy
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="warning"
+                      sx={{ width: "45%" }}
+                      onClick={() => addProductToBasket(productDetails)}>
+                      <AddShoppingCart />
+                    </Button>
+                  </Box>
+                </Box>
+                <Box>
                   <Button
                     variant="contained"
                     color="error"
-                    sx={{ width: "45%" }}
+                    sx={{ width: "50%" }}
                     onClick={() => deleteProduct(productDetails.id)}>
                     Delete
                   </Button>
@@ -139,7 +158,7 @@ const ProductDetails = () => {
                     <Button
                       variant="contained"
                       color="info"
-                      sx={{ width: "45%" }}>
+                      sx={{ width: "50%" }}>
                       Edit
                     </Button>
                   </Link>

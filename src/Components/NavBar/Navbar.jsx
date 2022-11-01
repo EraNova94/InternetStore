@@ -16,6 +16,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { basketContext } from "../../context/BasketContextProvider";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function NavBar() {
+  const { basketCount } = React.useContext(basketContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -188,7 +191,6 @@ function NavBar() {
             <Link to="/">Home</Link>
             <Link to="/add">Add Products</Link>
             <Link to="/list">Products List</Link>
-            {/* <Link to="/details">Products Details</Link> */}
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -196,9 +198,11 @@ function NavBar() {
               size="large"
               aria-label="show 4 new mails"
               color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
+              <Link to="/basket">
+                <Badge badgeContent={basketCount} color="error">
+                  <AddShoppingCartIcon />
+                </Badge>
+              </Link>
             </IconButton>
             <IconButton
               size="large"

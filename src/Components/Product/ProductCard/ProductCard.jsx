@@ -34,8 +34,8 @@ const ProductCard = ({ obj }) => {
             </IconButton>
           </Link>
         }
-        title={`Category: ${obj.category}`}
-        subheader={`Title: ${obj.title} Model: ${obj.model}`}
+        title={`Category: ${obj.title}`}
+        subheader={`Model: ${obj.model}`}
       />
       <div className="card__images">
         <CardMedia

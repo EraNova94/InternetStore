@@ -5,6 +5,7 @@ import AddProduct from "./Components/Admin/AddProduct/AddProduct";
 import ProductDetails from "./Components/Product/ProductDetails/ProductDetails";
 import ProductsList from "./Components/Product/ProductsList/ProductsList";
 import EditProduct from "./Components/Admin/EditProduct/EditProduct";
+import Basket from "./Components/Basket/Basket";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -13,6 +14,7 @@ const MainRoutes = () => {
       <Route path="/list" element={<ProductsList />} />
       <Route path="/details/:id" element={<ProductDetails />} />
       <Route path="/edit/:id" element={<EditProduct />}></Route>
+      <Route path="/basket" element={<Basket />} />
     </Routes>
   );
 };
