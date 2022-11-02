@@ -1,27 +1,27 @@
 {
   "products": [
     {
-      "category": "Electronics",
-      "title": "Phone",
-      "model": "Samsung J3",
-      "description": "Артикул: 649047 Диагональ (дюйм): 5 Разрешение (пикс): 1280x720 (HD) Встроенная память (Гб): 16 Фотокамера (Мп): 13 Процессор: Samsung Exynos 7570 Quad",
-      "color": "Gold",
-      "price": "150",
-      "img1": "https://cdn.svyaznoy.ru/upload/iblock/f55/at-galaxy-j3-j330f-sm-j330fzddato-frontgold-69534313.jpg/resize/483x483/hq/",
-      "img2": "https://cdn.svyaznoy.ru/upload/iblock/6dd/at-galaxy-j3-j330f-sm-j330fzddato-backgold-69534302.jpg/resize/483x483/hq/",
-      "img3": "https://cdn.svyaznoy.ru/upload/iblock/a44/at-galaxy-j3-j330f-sm-j330fzddato-lsidegold-69534303.jpg/resize/483x483/hq/",
+      "category": "531",
+      "title": "531",
+      "model": "6513",
+      "description": "68485",
+      "color": "5641",
+      "price": "15",
+      "img1": "65",
+      "img2": "4561",
+      "img3": "465",
       "id": 1
     },
     {
-      "category": "512",
-      "title": "6153",
-      "model": "6513",
-      "description": "615",
-      "color": "61523",
-      "price": "651",
-      "img1": "615",
-      "img2": "6152",
-      "img3": "6152",
+      "category": "650",
+      "title": "123",
+      "model": "123",
+      "description": "123",
+      "color": "123",
+      "price": "12",
+      "img1": "123",
+      "img2": "132",
+      "img3": "123",
       "id": 2
     }
   ]

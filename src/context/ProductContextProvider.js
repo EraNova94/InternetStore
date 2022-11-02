@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { createContext, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 export const productContext = createContext(); // облако
 
 const API = "http://localhost:8000/products";
@@ -23,6 +23,7 @@ function reducer(prevState, action) {
 
 const ProductContextProvider = props => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const location = useLocation();
   const navigate = useNavigate();
   //? create
   async function addProduct(newproduct) {
@@ -37,7 +38,7 @@ const ProductContextProvider = props => {
   //? read
 
   async function readProduct() {
-    const { data } = await axios(API);
+    const { data } = await axios(`${API}${location.search} `);
     dispatch({
       type: "GET_PRODUCT",
       payload: data,
